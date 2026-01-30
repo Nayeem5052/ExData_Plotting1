@@ -9,6 +9,7 @@ class(power_data[[3]])
 dim(power_data)
 
 
+png(file = "plot1.png")
 hist(power_data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power(kilowatts)")
-
+dev.off()
 
