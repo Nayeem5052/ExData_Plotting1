@@ -13,8 +13,11 @@ days_index <- c(1, match(days[2], power_data$Weekday), last_index)     ## Numeri
 
 
 
-png(file = "plot2.png")
-plot(power_data$Global_active_power, xlab = "", ylab = "Global Active Power(kilowatts)", type  = "l", xaxt = "n")
+png(file = "plot3.png")
+plot(power_data$Sub_metering_1, xlab = "", ylab = "Energy sub metering", type  = "l", xaxt = "n")
+lines(power_data$Sub_metering_2, col = "red")
+lines(power_data$Sub_metering_3, col = "blue")
 axis(side = 1, at = days_index, labels = days)          ## Adding the weekdays at appropriate positions
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"), lty = 1)
 dev.off()
 
