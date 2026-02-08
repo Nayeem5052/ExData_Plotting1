@@ -4,10 +4,6 @@ power_data <- power_data[power_data$Date == "2007-02-01" | power_data$Date == "2
 power_data[["Time"]] <- strptime(power_data[["Time"]], format = "%H:%M:%S")
 power_data[["Global_active_power"]] <- as.numeric(power_data$Global_active_power)
 
-names(power_data)
-class(power_data[[3]])
-dim(power_data)
-
 
 png(file = "plot1.png")
 hist(power_data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power(kilowatts)")
